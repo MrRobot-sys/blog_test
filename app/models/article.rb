@@ -8,7 +8,7 @@ class Article < ApplicationRecord
   end
 
   def self.get_full
-    self.class
+    all
   end
 
 # PostgreSQL. Versions 9.3 and up are supported.

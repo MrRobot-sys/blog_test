@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
   root "articles#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get '/articles', to: "articles#index"
-  get '/articles/:id', to: "articles#show"
-  get '/articles/new', to: "articles#new"
+  # get '/articles', to: "articles#index"
+  # get '/articles/:id', to: "articles#show"
+  # get '/articles/new', to: "articles#new"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
+
+  resources :articles
+  # можно сделать так, включив только определенные запросы
+  # resources :articles, only: [:index, :show] do
+
+  # resources :articles do
+  # end
+
+  # или просто resources :articles - полный набор CRUD
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
