@@ -4,8 +4,8 @@
 
   <div>
     <%= form.label :name %></br>
-    <%= form.text_field :name %>"
-    <% @article.errors.full_message_for(:title).each do |message| %>
+    <%= form.text_field :name %>
+    <% @article.errors.full_messages_for(:name).each do |message| %>
       <div><% message %></div>
     <% end %>
   </div>
@@ -13,8 +13,8 @@
   <div>
     <%= form.label :body %></br>
     <%= form.text_area :body %>
-    <% @article.errors.full_message_for(:body).each do |message| %>
-      <div><% message %></div>
+    <% @article.errors.full_messages_for(:body).each do |message| %>
+      <div>error - <% message %></div>
     <% end %>
   </div>
 

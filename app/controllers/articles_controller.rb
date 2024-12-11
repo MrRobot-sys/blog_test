@@ -12,10 +12,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(name: "..", body: "..")
+    @article = Article.new(article_params)
     if @article.save
       redirect_to @article
     else
+      pp @article.errors.messages
       render :new, status: :unprocessable_entity
     end
   end
