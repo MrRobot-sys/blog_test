@@ -28,6 +28,18 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
+# Swagger
+gem "rswag-api"
+gem "rswag-ui"
+
+group :development,:test do
+  gem 'rspec-rails'
+  gem 'rswag-specs'
+end
+
+# BluePrinter
+gem 'blueprinter'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

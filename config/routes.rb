@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   root "articles#index"
+  namespace :api do
+    resources :articles
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # get '/articles', to: "articles#index"
   # get '/articles/:id', to: "articles#show"
