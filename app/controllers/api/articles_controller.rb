@@ -1,11 +1,11 @@
 module Api
-  class ArticlesController < ApplicationController
+  class ArticlesController < ApplicationApiController
 
     before_action :set_article, only: %i[ show update destroy ]
 
     def index
       @articles = Article.all
-      render json: ArticleSerializer.render_as_json(@articles)
+      render json: Serializers::Article.render_as_json(@articles)
     end
 
     def show
